@@ -1,0 +1,9 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --tag=gcr.io/$PROJECT_ID/dropbox:$BRANCH_NAME
+      - --cache-from=gcr.io/$PROJECT_ID/dropbox:$BRANCH_NAME
+      - .
+images:
+  - gcr.io/$PROJECT_ID/dropbox:$BRANCH_NAME
