@@ -1,4 +1,4 @@
-package network.stratus;
+package net.electroid;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,7 +10,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Originally from https://github.com/dropbox/dropbox-api-content-hasher
+ * A simple hashing object for Dropbox files.
+ *
+ * All credit given to https://github.com/dropbox/dropbox-api-content-hasher,
+ * so that there are no discrepancies between how the files are hashed.
  */
 public final class Hash extends MessageDigest implements Cloneable  {
     private MessageDigest overallHasher;
@@ -155,4 +158,5 @@ public final class Hash extends MessageDigest implements Cloneable  {
             throw new AssertionError("Couldn't create SHA-256 hasher");
         }
     }
+
 }
