@@ -3,11 +3,15 @@ dropbox-sync
 
 A custom two-way [Dropbox](https://www.dropbox.com/developers) syncing application designed specifically for [Docker](https://www.docker.com/get-docker) environments.
 
+# Problem
+
+Currently, in order to deploy Dropbox into a Docker environment, you need to manually configure the entire host machine. Now, you can provision a Dropbox container with *just* an access token.
+
 # Build
 
 You will need a recent version of [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) as well as [Maven](http://maven.apache.org) installed on your computer. To build the program, just run `mvn clean install` and the jar should appear at `target/dropbox-sync-1.0-SNAPSHOT.jar`. After building is complete, you may also create a [Dockerfile](https://docs.docker.com/engine/reference/builder/) using the command `docker build -t dropbox .`
 
-If you want your image to auto deploy you can set up a [container builder](https://cloud.google.com/container-builder) to listen to changes in your Github repository. When setting up, you must reference the `build.yml` file in the repository, so the build program know how to create your `grc.io/$PROJECT_ID/dropbox` image.
+If you want your image to auto deploy you can set up a [container builder](https://cloud.google.com/container-builder) to listen to changes in your Github repository. When setting up, you must reference the `build.yml` file in the repository, so the build program knows how to create your `grc.io/$PROJECT_ID/dropbox` image.
 
 # Setup
 
