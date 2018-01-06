@@ -3,6 +3,8 @@ dropbox-sync
 
 A custom two-way [Dropbox](https://www.dropbox.com/developers) syncing application designed specifically for [Docker](https://www.docker.com/get-docker) environments.
 
+You can find an auto-deployed image using the command [`docker pull electroid/dropbox`](https://hub.docker.com/r/electroid/dropbox/).
+
 # Problem
 
 Currently, in order to deploy Dropbox into a Docker environment, you need to manually configure the entire host machine. Now, you can provision a Dropbox container with *just* an access token.
@@ -64,7 +66,3 @@ spec:
           hostPath:
             path: /dropbox
 ```
-
-# Example
-
-@StratusNetwork uses this application and publicly auto-deploys their image at `gcr.io/stratus-181519/dropbox:master`.
