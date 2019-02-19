@@ -24,7 +24,6 @@ public class Location {
     private static Path localPathRoot;
     private static Path remotePathRoot;
 
-    private static final Hash hasher = new Hash();
     private final Path localPath;
     private final Path remotePath;
 
@@ -57,7 +56,7 @@ public class Location {
      * @return the unique hash of the file.
      */
     public String hash() {
-        return exists() ? hasher.hash(local()) : "";
+        return exists() ? (new Hash()).hash(local()) : "";
     }
 
     /**
